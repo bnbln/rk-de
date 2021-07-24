@@ -1,17 +1,17 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import Logo from './Logo'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="de" />
         <title>{title}</title>
         <meta name="description" content={description} />
 
@@ -48,9 +48,54 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <div className="layout">
+      <div className="grid">
+        
+        <header>
+
+          <Logo />
+
+          <nav>
+            <Link className="navbar-item" to="/">
+              Home
+            </Link>
+            <Link className="navbar-item" to="/about">
+              Rechtsfragen
+            </Link>
+            <Link className="navbar-item" to="/about">
+              Anwalt
+            </Link>
+            <Link className="navbar-item" to="/blog">
+              Aktuelles
+            </Link>
+            <Link className="navbar-item" to="/contact">
+              Kontakt
+            </Link>
+          </nav>
+        </header>
+        <div className="text">
+          <div className="hero primary">
+            <ul>
+                <li>TS</li>
+            </ul>
+            <h1>Ihr Partner für Versicherungs-, Verkehrs- und Mietrecht</h1>
+            <p className="lead">Wir bieten hochqualiative Rechtsberatung in unserer Berliner Kanzlei für Sie</p>
+            <button>Kontakt aufnehmen</button>
+          </div>
+        </div> 
+        <div className="image" style={{
+            backgroundImage: "url()"
+            }}>
+        </div>
+        </div>
+
+        
       <div>{children}</div>
+
+
       <Footer />
+
+      </div>
     </div>
   )
 }
