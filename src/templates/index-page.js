@@ -9,7 +9,10 @@ import Logo from '../components/Logo'
 
 export const IndexPageTemplate = ({
   image,
+  dachzeile,
   title,
+  lead,
+  bannerimage,
   heading,
   subheading,
   mainpitch,
@@ -42,10 +45,10 @@ export const IndexPageTemplate = ({
         <div className="text">
           <div className="hero primary">
             <ul>
-                <li>TS</li>
+                <li>{dachzeile}</li>
             </ul>
-            <h1>Ihr Partner für Versicherungs-, Verkehrs- und Mietrecht</h1>
-            <p className="lead">Wir bieten hochqualiative Rechtsberatung in unserer Berliner Kanzlei für Sie</p>
+            <h1>{title}</h1>
+            <p className="lead">{lead}</p>
             <button>Kontakt aufnehmen</button>
           </div>
         </div> 
@@ -71,7 +74,10 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  dachzeile: PropTypes.string,
   title: PropTypes.string,
+  lead: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -87,9 +93,14 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
+        dachzeile={frontmatter.dachzeile}
         title={frontmatter.title}
+        lead={frontmatter.lead}
+        // cta={frontmatter.cta}
+        bannerimage={frontmatter.bannerimage}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        // bannercta={frontmatter.bannercta}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -115,7 +126,6 @@ export const pageQuery = graphql`
         dachzeile
         title
         lead
-        cta01
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -132,7 +142,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        cta02
         mainpitch {
           title
           description
