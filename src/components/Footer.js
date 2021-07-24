@@ -13,27 +13,37 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer>
-            <Logo size="long" color="white"></Logo>
-            <main>
-                <div>
-                    <p><b>Rechtsanwälte in Bürogemeinschaft</b></p>
-                    <p>TS <br/> Zivilrecht</p>
-                    <p>TS <br/> Zivilrecht</p>
-                    <p>TS <br/> Zivilrecht</p>
-                </div>
-                <div>
-                    <p>AnsStr 13 <br/>  Berlin</p>
-                    <p>Telefon:  <br/>
-                        Fax:  <br/>
-                        Mail: </p>
-                </div>
-                <div>
-                    <nav>
-                   
-                </nav>
-                </div>
-            </main>
-          </footer>
+        <Logo size="long" color="white"></Logo>
+        <main>
+          <div>
+            <p>
+              <b>Rechtsanwälte in Bürogemeinschaft</b>
+            </p>
+            <p>
+              TS <br /> Zivilrecht
+            </p>
+            <p>
+              TS <br /> Zivilrecht
+            </p>
+            <p>
+              TS <br /> Zivilrecht
+            </p>
+          </div>
+          <div>
+            <p>
+              AnsStr 13 <br /> Berlin
+            </p>
+            <p>
+              Telefon: <br />
+              Fax: <br />
+              Mail:{' '}
+            </p>
+          </div>
+          <div>
+            <nav></nav>
+          </div>
+        </main>
+      </footer>
     )
   }
 }

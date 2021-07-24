@@ -6,7 +6,6 @@ import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import Logo from '../components/Logo'
 
-
 export const IndexPageTemplate = ({
   image,
   dachzeile,
@@ -45,36 +44,42 @@ export const IndexPageTemplate = ({
         <div className="text">
           <div className="hero primary">
             <ul>
-                <li>{dachzeile}</li>
+              <li>{dachzeile}</li>
             </ul>
             <h1>{title}</h1>
             <p className="lead">{lead}</p>
             <button>Kontakt aufnehmen</button>
           </div>
-        </div> 
-        <div className="image" style={{
-            backgroundImage: "url()"
-            }}>
         </div>
+        <div
+          className="image"
+          style={{
+            backgroundImage: 'url()',
+          }}
+        ></div>
       </div>
     </div>
     <Banner>
-        <div className="left">
-          <img src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} alt="" />
-        </div>
-        <div className="right white">
-          <h2>{heading}</h2>
-          <p className="lead">{subheading}</p>
-          <button variant="secondary">Mehr über uns erfahren</button>
-        </div>
-      </Banner>
-        
+      <div className="left">
+        <img
+          src={
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          }
+          alt=""
+        />
+      </div>
+      <div className="right white">
+        <h2>{heading}</h2>
+        <p className="lead">{subheading}</p>
+        <button variant="secondary">Mehr über uns erfahren</button>
+      </div>
+    </Banner>
   </>
 )
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  //bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   dachzeile: PropTypes.string,
   title: PropTypes.string,
   lead: PropTypes.string,
@@ -97,7 +102,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         lead={frontmatter.lead}
         // cta={frontmatter.cta}
-        bannerimage={frontmatter.bannerimage}
+        //bannerimage={frontmatter.image}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         // bannercta={frontmatter.bannercta}
@@ -135,13 +140,7 @@ export const pageQuery = graphql`
         }
         heading
         subheading
-        bannerimage {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+
         mainpitch {
           title
           description
