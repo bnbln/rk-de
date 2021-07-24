@@ -51,19 +51,19 @@ export const IndexPageTemplate = ({
             <button>Kontakt aufnehmen</button>
           </div>
         </div>
-        <div
-          className="image"
-          style={{
-            backgroundImage: 'url()',
-          }}
-        ></div>
+        <div className="image">
+          <img src={
+                        !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+
+          } />
+        </div>
       </div>
     </div>
     <Banner>
       <div className="left">
         <img
           src={
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+            !!bannerimage.childImageSharp ? bannerimage.childImageSharp.fluid.src : bannerimage
           }
           alt=""
         />
@@ -79,7 +79,7 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  //bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   dachzeile: PropTypes.string,
   title: PropTypes.string,
   lead: PropTypes.string,
@@ -102,7 +102,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         lead={frontmatter.lead}
         // cta={frontmatter.cta}
-        //bannerimage={frontmatter.image}
+        bannerimage={frontmatter.bannerimage}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         // bannercta={frontmatter.bannercta}
@@ -140,7 +140,13 @@ export const pageQuery = graphql`
         }
         heading
         subheading
-
+        bannerimage {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         mainpitch {
           title
           description
