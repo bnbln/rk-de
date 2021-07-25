@@ -1,10 +1,47 @@
-templateKey: settings
 site: rk.de
 description: Kanzlei am Wittenbergplatz
-seo: >-
-  A starter project for creating lightning-fast websites with Gatsby v2 Netlify
-  CMS v2 and Uploadcare media library.
-image: 'https://ucarecdn.com/fcc8d148-a9a8-42ee-a793-0f12b1437f61/'
+seo: Lorem ipsum dolor
+image: /img/ImageAbout.png
 menu:
+  - name: Home
+    to: /
+  - name: Rechtsfragen
+    to: /about
+  - name: Anwalt
+    to: /about
+  - name: Aktuelles
+    to: /blog
+  - name: Kontakt
+    to: /contact
 footermenu:
+  - name: Kontakt
+    to: /contact
+  - name: Impressum
+    to: /
+  - name: Datenschutz
+    to: /
 contact:
+  info: |-
+    **Rechtsanwälte in Bürogemeinschaft**\
+    T\
+    Zivilrecht
+
+    A\
+    Fachanwältin für Verkehrsrecht
+
+    T\
+    Fachanwältin für Arbeitsrecht
+  contact: |-
+    **Anschrift**
+
+    Ans\
+    10787
+
+    **Kontaktdaten**\
+    Telefon:\
+    Fax:\
+    Mail:
+  open: |-
+    **Sprechzeiten**\
+    Mo-Fr 9:00-12:00 Uhr\
+    Mo, Di, Do 15:00-18:00 Uhr
