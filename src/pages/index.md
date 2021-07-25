@@ -1,24 +1,8 @@
 ---
-templateKey: index-page
-hero:
-  image: /img/headerimage.jpg
-  dachzeile: TS
-  title: Ihr Partner für Versicherungs-, Verkehrs- und Mietrecht
-  lead: Wir bieten hochqualiative Rechtsberatung in unserer Berliner Kanzlei für Sie
-  cta: Über mich
-dachzeile: TS
-title: Ihr Partner für Versicherungs-, Verkehrs- und Mietrecht
-lead: Wir bieten hochqualiative Rechtsberatung in unserer Berliner Kanzlei für Sie
-cta: Über mich
-image: /img/headerimage.jpg
-banner01:
-  heading: " Unsere Kanzlei am Wittenbergplatz"
-  subheading: Lernen Sie uns, unsere Stärken und Kolleg*innen besser kennen
-  bannercta: Kontakt aufnehmen
 heading: Unsere Kanzlei am Wittenbergplatz
 subheading: Lernen Sie uns, unsere Stärken und Kolleg*innen besser kennen
-bannerimage: /img/products-grid2.jpg
 bannercta: Kontakt aufnehmen
+templateKey: index-page
 mainpitch:
   title: Why Kaldi
   description: >
@@ -26,6 +10,17 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
+hero:
+  image: /img/headerimage.jpg
+  dachzeile: TS
+  title: Ihr Partner für Versicherungs-, Verkehrs- und Mietrecht
+  lead: Wir bieten hochqualiative Rechtsberatung in unserer Berliner Kanzlei für Sie
+  cta: Über mich
+banner01:
+  heading: " Unsere Kanzlei am Wittenbergplatz"
+  subheading: Lernen Sie uns, unsere Stärken und Kolleg*innen besser kennen
+  bannercta: Kontakt aufnehmen
+  bannerimage: /img/products-grid2.jpg
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -57,8 +52,14 @@ intro:
 banner02:
   contactheading: Jetzt Kontakt aufnehmen
   contactbannercta: Zum Kontaktformular
+  heading: Jetzt Kontakt aufnehmen
+  cta: Zum Kontaktformular
+bannerimage: /img/products-grid2.jpg
+cta: Über mich
 cta01: Über mich
 cta02: Kontakt aufnehmen
+dachzeile: TS
+title: Ihr Partner für Versicherungs-, Verkehrs- und Mietrecht
 main:
   heading: Great coffee with no compromises
   description: >
@@ -75,6 +76,8 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+image: /img/headerimage.jpg
+lead: Wir bieten hochqualiative Rechtsberatung in unserer Berliner Kanzlei für Sie
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
