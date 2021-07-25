@@ -7,7 +7,7 @@ lead: Kaldi is the ultimate spot for coffee lovers who want to learn about their
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone. This is an edit via identity
 cta: Kontakt aufnehmen
-image: /img/imageabout.png
+image: /img/blog-index.jpg
 ---
 ## Lebenslauf
 
