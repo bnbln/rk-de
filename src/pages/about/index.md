@@ -1,20 +1,10 @@
 ---
 templateKey: about-page
 path: /about
-<<<<<<< HEAD
 title: About our values
 lead: Kaldi is the ultimate spot for coffee lovers who want to learn about their java’s origin and support the farmers that grew it. We take coffee production, roasting and brewing seriously and we’re glad to pass that knowledge to anyone. This is an edit via identity...
 cta: Kontakt aufnehmen
 image: /img/imageAbout.png
-=======
-title: Über Rechtsanwalt T S
-lead: Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone. This is an edit via identity
-cta: Kontakt aufnehmen
-image: /img/blog-index.jpg
->>>>>>> ae6b2f0e769501e19c75631b246e7b8b05314e47
 ---
 ## Lebenslauf
 
