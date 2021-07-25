@@ -4,7 +4,7 @@ import {Transition, config, animated} from "react-spring"
 import truck from "../../public/img/truck.svg"
 import home from "../../public/img/home.svg"
 import file from "../../public/img/file-text.svg"
-
+ 
 
 function Carousel(props) {
     const [active, setActive] = useState(0)

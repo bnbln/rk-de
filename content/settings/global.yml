@@ -1,0 +1,10 @@
+templateKey: settings
+site: rk.de
+description: Kanzlei am Wittenbergplatz
+seo: >-
+  A starter project for creating lightning-fast websites with Gatsby v2 Netlify
+  CMS v2 and Uploadcare media library.
+image: 'https://ucarecdn.com/fcc8d148-a9a8-42ee-a793-0f12b1437f61/'
+menu:
+footermenu:
+contact:
