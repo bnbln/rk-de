@@ -63,6 +63,18 @@ li::before
   vertical-align: middle
   line-height: 33px
 
+// Margins
+.left
+  margin-left: $frame
+.top
+  margin-top: $frame
+.right
+  margin-right: $frame
+.bottom
+  margin-bottom: $frame          
+.mymargins
+  padding: $frame
+
 // Layout
 .layout 
   position: relative
@@ -90,6 +102,16 @@ li::before
       background-size: cover
       background-position: center
 
+// Hero
+.hero
+  &.dark
+    background-color: $primary
+    color: white
+    header
+      a 
+        color: white
+    .primary
+      color: white
   // Logo
 
   .logo h1 
@@ -101,7 +123,7 @@ li::before
     letter-spacing: -0.01em
 
 // Header
-  header 
+header 
   display: flex
   flex-direction: row
   justify-content: space-between
@@ -109,6 +131,9 @@ li::before
   padding: 0px
   width: calc(100% - $frame - $frame)
   margin: 0px $frame
+  a 
+    text-decoration: none
+    color: $primary
   nav 
     display: flex
     flex-direction: row
@@ -126,6 +151,22 @@ li::before
       text-decoration: none
       & .active, &:hover 
         opacity: 1
+
+// Footer
+footer 
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  padding: $frame
+  background-color: $primary
+  color: white
+  main 
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-start
+
 
 // Banner
 .banner 
@@ -154,3 +195,177 @@ li::before
     .right 
       padding: $frame
       
+// Carousel
+.carousel
+  display: grid
+  grid-template-areas: "left right"
+  grid-template-columns: 60% 1fr
+  .text 
+    grid-area: left
+    padding: $frame
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 20px
+  .textslider 
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    padding: 40px 20px
+    border-top: 1px solid var(--primary)
+    position: relative
+    margin-top: 48px
+    width: fit-content
+    .item 
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      opacity: 0.6
+      width: 200px
+      height: 125px
+      position: relative
+      cursor: pointer
+      &:hover, &.active 
+        opacity: 1
+      &.active::before 
+        content: ""
+        position: absolute
+        top: -44.5px
+        width: 100%
+        border: 4px solid $secondary
+  
+  .imagesliderwrapper 
+    grid-area: right
+    padding: var(--frame)
+    padding-left: 0px
+    position: relative
+  .imageslider 
+    position: relative
+    width: 100%
+    padding-top: 100%
+    overflow: hidden
+    img 
+      position: absolute
+      width: 100%
+      height: auto
+      top: 0px
+      left: 0px
+  
+  @media only screen and (max-width: 900px) 
+    .carousel 
+      grid-template-areas: "left" "right"
+      grid-template-columns: 100%
+      .textslider 
+        display: none
+      .imagesliderwrapper 
+        padding: 0
+        margin-bottom: 40px
+    
+  // Map
+
+// News
+.news 
+  display: flex
+  position: relative
+  flex-direction: row
+  padding: 0px $frame
+  gap: 40px
+  margin-bottom: 80px
+  .left 
+    width: 65%
+    position: relative
+  .right 
+    width: 35%
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 16px
+  article.small 
+    display: flex
+    gap: 16px
+    img
+      width: 150px
+      height: 150px
+  article  
+    img
+      width: 100%
+      height: auto
+    main 
+      margin-top: 24px
+      display: flex
+      flex-direction: column
+      gap: 16px
+  .dach
+    font-family: Roboto
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    display: flex
+    align-items: center
+    letter-spacing: 0.1em
+    text-transform: uppercase
+    color: #258EA6
+  .headline 
+    font-family: Roboto
+    font-style: normal
+    font-weight: 900
+    font-size: 24px
+    line-height: 36px
+    color: #1D1D1D
+  .lead 
+    font-family: Roboto
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 149%
+    color: rgba(23, 35, 64, 0.6)
+
+
+.news .small .headline
+  font-family: Roboto
+  font-style: normal
+  font-weight: 900
+  font-size: 16px
+  line-height: 21px
+  color: #1D1D1D
+
+.news .more 
+  font-family: Roboto
+  font-style: normal
+  font-weight: 900
+  font-size: 12px
+  line-height: 193.9%
+  text-decoration-line: underline
+  text-transform: uppercase
+  color: #1D1D1D
+
+@media only screen and (max-width: 900px) 
+  .news 
+    flex-direction: column
+    .left, .right 
+      width: 100%
+    
+// Button
+
+a.button
+  text-decoration: none
+  padding: 16px 24px
+  font-weight: bold
+  font-size: 16px
+  line-height: 193.9%
+  letter-spacing: -0.01em
+  text-transform: uppercase
+  color: $primary
+  width: max-content
+  &.primary
+    background: $primary
+    color: white
+  &.secondary
+    background: $secondary
+    color: white
+  &.white
+    background: white
+    color: $primary

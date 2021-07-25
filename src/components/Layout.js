@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
-import { Link, withPrefix } from 'gatsby'
+import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()

@@ -4,91 +4,71 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
-import Logo from '../components/Logo'
+import Hero from '../components/Hero'
+import Carousel from '../components/Carousel'
+import Map from '../components/Map'
+import BlogRoll from '../components/BlogRoll'
+
+import Button from '../components/Button'
+
 
 export const IndexPageTemplate = ({
-  image,
-  dachzeile,
-  title,
-  lead,
-  bannerimage,
-  heading,
-  subheading,
-  mainpitch,
-  description,
+  hero,
+  banner01,
   intro,
+  banner02
 }) => (
   <>
-    <div className="layout">
-      <div className="grid">
-        <header>
-          <Logo />
-          <nav>
-            <Link className="navbar-item" to="/">
-              Home
-            </Link>
-            <Link className="navbar-item" to="/about">
-              Rechtsfragen
-            </Link>
-            <Link className="navbar-item" to="/about">
-              Anwalt
-            </Link>
-            <Link className="navbar-item" to="/blog">
-              Aktuelles
-            </Link>
-            <Link className="navbar-item" to="/contact">
-              Kontakt
-            </Link>
-          </nav>
-        </header>
-        <div className="text">
-          <div className="hero primary">
-            <ul>
-              <li>{dachzeile}</li>
-            </ul>
-            <h1>{title}</h1>
-            <p className="lead">{lead}</p>
-            <button>Kontakt aufnehmen</button>
-          </div>
-        </div>
-        <div className="image">
-          <img src={
-                        !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-
-          } />
-        </div>
-      </div>
-    </div>
+    <Hero hero={hero} variant="light" />
     <Banner>
       <div className="left">
-        <img
-          src={
-            !!bannerimage.childImageSharp ? bannerimage.childImageSharp.fluid.src : bannerimage
-          }
-          alt=""
-        />
+        {banner01.bannerimage ?
+          <img 
+            src={!!banner01.bannerimage.childImageSharp ? banner01.bannerimage.childImageSharp.fluid.src : banner01.bannerimage}
+            alt=""
+          />
+        : null}
       </div>
       <div className="right white">
-        <h2>{heading}</h2>
-        <p className="lead">{subheading}</p>
-        <button variant="secondary">Mehr über uns erfahren</button>
+        <h2>{banner01.heading}</h2>
+        <p className="lead">{banner01.subheading}</p>
+        <Button variant="white" to="/contact">{banner01.bannercta}</Button>
       </div>
     </Banner>
+    <Carousel data={intro} />
+    <Map />
+    <Banner>
+      <div className="left" style={{paddingTop:40, paddingBottom: 40}}>
+        <h1 className="white" style={{textAlign: "right"}}>{banner02.heading}</h1>
+      </div>
+      <div className="right white" style={{paddingTop:40, paddingBottom: 40}}>
+        <Button variant="white" to="/about">{banner02.cta}</Button>
+      </div>   
+    </Banner>
+    <BlogRoll />
   </>
 )
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  dachzeile: PropTypes.string,
-  title: PropTypes.string,
-  lead: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
+  hero: PropTypes.shape({
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    dachzeile: PropTypes.string,
+    title: PropTypes.string,
+    lead: PropTypes.string,
+    cta: PropTypes.string,
+  }),
+  banner01: PropTypes.shape({
+    bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    heading: PropTypes.string,
+    subheading: PropTypes.string,
+    bannercta: PropTypes.string,
+  }),
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
+  }),
+  banner02: PropTypes.shape({
+    heading: PropTypes.string,
+    cta: PropTypes.string,
   }),
 }
 
@@ -97,18 +77,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        dachzeile={frontmatter.dachzeile}
-        title={frontmatter.title}
-        lead={frontmatter.lead}
-        // cta={frontmatter.cta}
-        bannerimage={frontmatter.bannerimage}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        // bannercta={frontmatter.bannercta}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
+        hero={frontmatter.hero}
+        banner01={frontmatter.banner01}
         intro={frontmatter.intro}
+        banner02={frontmatter.banner02}
       />
     </Layout>
   )
@@ -128,30 +100,35 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        dachzeile
-        title
-        lead
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        heading
-        subheading
-        bannerimage {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        mainpitch {
+        hero {
+          dachzeile
           title
-          description
+          lead
+          cta
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
-        description
+        banner01 {
+          heading
+          subheading
+          bannercta
+          bannerimage {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        banner02 {
+          heading
+          cta
+        }
         intro {
           blurbs {
             image {
