@@ -21,9 +21,9 @@ export const AboutPageTemplate = ({ title, lead, cta, image, content, contentCom
         }
       }
       variant="dark" /> 
-      {/* <section className="mymargins">
+      <section className="mymargins">
         <PageContent className="content" content={content} />
-      </section> */}
+      </section>
     </>
   )
 }
@@ -44,7 +44,7 @@ const AboutPage = ({ data }) => {
         title={post.frontmatter.title}
         lead={post.frontmatter.lead}
         cta={post.frontmatter.cta}
-        image={post.frontmatter.image}
+        // image={post.frontmatter.image}
         content={post.html}
       />
     </Layout>

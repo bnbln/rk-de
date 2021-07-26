@@ -6,6 +6,7 @@ function Button(props) {
         <Link to={props.to} className={props.variant ? "button "+ props.variant + "" : "button primary"}>
              {props.children}
         </Link>
+        
     )
 }
 
