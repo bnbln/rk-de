@@ -17,13 +17,13 @@ export const AboutPageTemplate = ({ title, lead, cta, image, content, contentCom
           title: title, 
           lead: lead,
           cta: cta,
-          image: image
+          // image: image
         }
       }
       variant="dark" /> 
-      <section className="mymargins">
+      {/* <section className="mymargins">
         <PageContent className="content" content={content} />
-      </section>
+      </section> */}
     </>
   )
 }
@@ -65,13 +65,7 @@ export const aboutPageQuery = graphql`
         title
         lead
         cta
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+
       }
     }
   }
