@@ -45,7 +45,7 @@ export const IndexPageTemplate = ({
         <Button variant="white" to="/about">{banner02.cta}</Button>
       </div>   
     </Banner>
-    <BlogRoll />
+    {/* <BlogRoll /> */}
   </>
 )
 
